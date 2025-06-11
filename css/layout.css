@@ -1,0 +1,467 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+main {
+  flex: 1;
+}
+
+header, footer {
+  background-color: rgba(11, 13, 19, 0.7) !important;
+  /*filter: blur(4px);*/
+}
+
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+
+header .logo img {
+  width: 70px;
+  height: 50px;
+  object-fit: contain;
+}
+
+header .logo-text {
+  display: none;
+  font-size: 12px;
+}
+
+header .logo-text p {
+  font-size: 12px;
+  color: #fff;
+}
+
+header .nav {
+  margin-left: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+}
+header .nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+header .nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+header .nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+header .nav a.active {
+  color: red;
+}
+
+header .nav a:hover {
+  color: red;
+}
+
+header .button {
+  /*margin-left: ;*/
+  display: flex;
+  gap: 16px;
+}
+
+header .button-black {
+  width: 126px;
+}
+
+header .button-red {
+  width: 144px;
+}
+
+header .button-black, header .button-red {
+  height: 40px;
+  border: none;
+  /*padding: 10px 35px;*/
+  border-radius: 9999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+header .button-black:hover {
+  background-color: #1F2937;
+}
+
+header .button-black {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+header .button-red {
+  color: #fff;
+}
+
+header .menu-items {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+header .menu-items span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+header #menu-toggle {
+  display: none;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+footer .footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer .social-items {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+footer .social-items img {
+  height: 30px;
+  object-fit: contain;
+}
+
+footer .footer-info {
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 0 16px 0 16px;
+    /*height: 64px;*/
+  }
+
+  header .logo {
+    margin-left: 0;
+  }
+
+  header .logo img {
+    width: 60px;
+    height: 40px;
+  }
+
+  header .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0B0D13;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    gap: 25px;
+    padding: 20px 0;
+    z-index: 8999;
+    margin: 0;
+  }
+
+  header .nav-links {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  footer .social-items .group {
+    width: 100%;
+  }
+
+  header #menu-toggle:checked~.nav {
+    display: flex;
+  }
+
+  header .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 10px;
+  }
+
+  header .menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  header .button {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  header .button-black, header .button-red {
+    border-radius: 6px !important;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  header .button-black {
+    background: transparent;
+    border: 1px solid #394d70;
+  }
+
+  header .logo-text {
+    display: block;
+  }
+}
+
+
+.modal-layout .login-container {
+  background-color: #0d111c;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid #202a45;
+  z-index: 999;
+}
+
+.modal-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  padding: 40px 20px;
+}
+.modal-layout .login-box input{
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.modal-layout input {
+  padding: 15px 10px !important;
+  border: 1px solid #35445e !important;
+  border-radius: 10px !important;
+  font-size: 17px !important;
+  background-color: transparent !important;
+}
+
+.modal-layout .blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(13, 17, 28, 0.4);
+  z-index: 9998;
+}
+
+.modal-layout .login-container {
+  background-color: #0d111c;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid #202a45;
+  z-index: 10000;
+}
+
+.modal-layout .login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.login-box label {
+  /*margin-top: 50px;*/
+  font-weight: 500;
+  font-size: 14px;
+  /*padding: 10px;*/
+}
+
+.modal-layout .login-box input {
+  width: 100%;
+  height: 45px;
+  color: white;
+  padding: 10px 15px;
+}
+
+.modal-layout .login-box .couple {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-layout .login-box .couple input {
+  flex: 1;
+}
+
+.modal-layout .login-box button {
+  width: 100%;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.modal-layout .forgot-password {
+  text-align: end;
+  margin-top: 5px;
+}
+.modal-layout .forgot-password a {
+  color: rgb(255, 55, 55);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.modal-layout .login-box .link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.modal-layout .login-box .link a {
+  color: #ff4242;
+  text-decoration: none;
+}
+
+.modal-layout .couple {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-layout .close {
+  cursor: pointer;
+  font-size: 20px
+}
+.modal-layout .text-danger{
+  color: red;
+  margin-top: 4px;
+  line-height: 12px;
+  font-size: 12px;
+}
+
+header .dropdown-user {
+  position: relative;
+  display: inline-block;
+}
+
+header .btn-user {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1F2937;
+  right: 0;
+  top: 110%;
+  min-width: 140px;
+  border-radius: 10px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+header .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+#admin {
+  display: none;
+}
+
+.logo img {
+  cursor: pointer;
+}
+
+/* sử dụng để ẩn thanh điều chỉnh trên các input type"number" */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

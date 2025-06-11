@@ -1,0 +1,218 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body{
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+} */
+
+main {
+  margin: 128px 80px 64px 80px;
+}
+
+.content{
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #fff;
+}
+
+h2{
+  margin: 40px 0 15px;
+  font-size: 22px;
+  color: white;
+  text-align: left;
+}
+
+.table-responsive{
+  width: 100%;
+  overflow-x: auto;
+}
+
+.price-table{
+  width: 1280px;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  table-layout: auto;
+  border: 1px solid #333;
+}
+
+table td:first-child, th:first-child {
+  text-align: left;
+  /*width: 128px;*/
+}
+
+.price-table thead tr:first-child th{
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px;
+  border: 1px solid #333;
+}
+
+.price-table thead tr:nth-child(2) th{
+  background-color: #1e1e1e;
+  color: #ccc;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.price-table th, .price-table td{
+  border: 1px solid #333;
+  padding: 12px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.price-table .standard{
+  color: #ffffff;
+}
+
+.price-table .sweetbox{
+  color: #ff6666;
+}
+
+small {
+  font-size: 1em;
+}
+
+.notes{
+  margin-top: 32px;
+  font-size: 16px;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.notes ul{
+  padding-left: 20px;
+}
+
+.notes li{
+  margin-bottom: 10px;
+  list-style: disc;
+}
+
+.notes p{
+  margin: 20px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.notes hr{
+  border: 0;
+  border-top: 1px solid;
+  margin: 30px 0
+}
+
+hr, .notes hr {
+  display: none;
+}
+
+@media (max-width: 768px){
+  main {
+    margin: 98px 16px 48px 16px;
+  }
+
+  .content {
+    width: 100%; /* giữ width content 736px */
+    overflow-x: auto; /* thêm để cuộn ngang nếu cần */
+  }
+
+  .price-table {
+    width: 736px;
+    table-layout: fixed; /* giúp bảng ổn định khi cố định width */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .notes {
+    width: 100%;
+  }
+
+  h1{
+    font-size: 16px;
+  }
+
+  h2{
+    font-size: 18px;
+  }
+
+  .price-table th, .price-table td{
+    font-size: 12px;
+    /* padding: 8px 10px; */
+    white-space: normal; /* cho phép xuống dòng trong ô */
+    word-wrap: break-word;
+  }
+
+  .notes ul, .notes p{
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 390px){
+  main {
+    margin: 98px 16px 48px 16px;
+  }
+
+  .content{
+    width: auto; /* giữ width content 736px */
+    overflow-x: auto; /* thêm để cuộn ngang nếu cần */
+  }
+
+  .content h1 {
+    font-size: 24px;
+  }
+
+  .price-table {
+    /*width: auto;*/
+    table-layout: fixed; /* giúp bảng ổn định khi cố định width */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .notes {
+    width: 100%;
+  }
+
+  h1{
+    font-size: 16px;
+  }
+
+  h2{
+    font-size: 18px;
+  }
+
+  .price-table th, .price-table td{
+    font-size: 12px;
+    /* padding: 8px 10px; */
+    white-space: normal; /* cho phép xuống dòng trong ô */
+    word-wrap: break-word;
+  }
+
+  .notes ul, .notes p{
+    font-size: 13px;
+  }
+
+  .highlight{
+    color: #ffcc00;
+  }
+}
+

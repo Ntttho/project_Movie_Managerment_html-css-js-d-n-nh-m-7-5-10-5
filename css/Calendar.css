@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+p {
+    margin-bottom: 4px;
+}
+
+#title {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.schedule {
+    margin: 12px 0 8px 0;
+}
+
+main{
+    width: 100%;
+    padding: 128px 80px 64px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Calendar-top-title{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.Calendar-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Calendar-title-button{
+    width: 427px;
+}
+.Calendar-title-button button{
+    width: 93px;
+    height: 40px;
+    border: 1px solid #374151;
+    border-radius: 7px;
+    background-color: #0B0D13;
+    color: white;
+    font-size: 16px;
+    margin: 5px;
+}
+.Movie-phim{
+    width: 100%;
+    height: auto;
+    gap: 24px;
+}
+.movie-card {
+    width: calc(50% - 12px);
+    height: 310px;
+    position: relative;
+    border: 1px solid #374151;
+    border-radius: 10px;
+    /* box-sizing: border-box; */
+}
+.movie-card img{
+    width: 220px;
+    border-radius: 10px 0px 0px 10px;
+    object-fit: cover;
+}
+.Card-content{
+    font-size: 14px;
+    position: relative;
+    width: calc(100% - 220px);
+    padding: 24px;
+}
+.type-time{
+    gap: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.active-future-button{
+    display: flex;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 36px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.div-2D{
+    width: 40px;
+    height: 34px;
+    color: #D1D5DB;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #374151;
+    border-radius: 10px;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    main{
+        padding: 96px 24px 48px 24px;
+    }
+
+    .Movie-phim{
+        gap: 16px;
+    }
+
+    .movie-card {
+        width: calc(50% - 8px);
+        height: 322px;
+    }
+
+    .movie-card img{
+        width: 150px;
+    }
+
+    .active-future-button{
+        max-width: 39px;
+        height: 30px;
+    }
+
+    .movie-card img{
+        width: 150px;
+        object-fit: cover;
+    }
+/* 
+    main {
+        padding: 96px 24px;
+    } */
+
+    .text-danger{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .schedule {
+        margin: 8px 0 8px 0;
+    }
+
+    .type-time {
+        font-size: 12px;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .type-time p {
+        margin: 0;
+    }
+
+    .Card-content{
+        width: calc(100% - 150px);
+        padding: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        width: 100%;
+        padding: 88px 12px 48px 12px;
+    }
+
+    .Movie-phim {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .movie-card {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .movie-card img {
+        width: 120px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .Card-content {
+        width: calc(100% - 120px);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .div-2D {
+        top: 10px;
+        right: 10px;
+        font-size: 14px;
+        width: 36px;
+        height: 30px;
+    }
+
+    .type-time {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+
+    .active-future-button {
+        width: 100%;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .Calendar-title-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .Calendar-title-button button {
+        width: 30%;
+        font-size: 14px;
+        height: 36px;
+        padding: 4px;
+    }
+
+    .text-danger {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        font-size: 12px;
+    }
+}

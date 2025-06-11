@@ -1,0 +1,313 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <main class="position-relative">
+        <div class="sidebar w-15 position-absolute p-3 d-flex flex-column">
+            <div class="logo w-50 m-auto mb-4 d-flex mt-0 justify-content-center">
+                <img src="../../assets/icon/logo.png" alt="" class="w-100" onclick="location.href='./dashboard.html'">
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html"><i class="fa-solid fa-house fs-5 pe-2"></i>
+                        Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"><i class="fa-solid fa-video fs-5 pe-2"></i> Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./news.html"><i class="fa-regular fa-newspaper fs-5 pe-2"></i> News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./promotion.html"><i class="fa-solid fa-gift fs-5 pe-2"></i>
+                        Promotions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./festival.html"><i class="fa-regular fa-star fs-5 pe-2"></i> Festival</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./room.html"><i class="fa-solid fa-door-closed fs-5 pe-2"></i> Room</a>
+                </li>
+            </ul>
+
+            <div class="logout mt-auto d-flex">
+                <a href="../HomePage.html" class="btn btn-red-gradient w-100">Return Page</a>
+            </div>
+        </div>
+
+        <div class="header ms-23 pt-2">Movies</div>
+
+        <div class="content ms-23 p-4">
+            <div class="d-flex justify-content-between">
+                <div class="position-relative w-25">
+                    <input type="text" class="form-control ps-5 pe-5 text-white" placeholder="Search" id="search"
+                        onchange="searching()">
+                    <span class="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary text-white"><i
+                            class="fas fa-search"></i></span>
+                    <div class="btn-group position-absolute top-50 end-0 translate-middle-y me-2">
+                        <button type="button" class="btn btn-sm text-white dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-filter"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end p-3 w-50">
+                            <li>
+                                <label for="filterDate" class="form-label text-white">Date:</label>
+                                <input type="date" class="form-control" id="filterDate">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#addMovieModal"
+                    onclick="setButtonAddMovie();     document.getElementById('addMovieModal').querySelector('h5').innerText = 'Thêm Phim';">
+                    <i class="fa-solid fa-plus"></i> Thêm Phim
+                </button>
+            </div>
+
+            <button id="deleteSelected" class="btn btn-danger btn-sm" onclick="deleteSelected()">Xoá lựa chọn</button>
+            <table class="table table-hover align-middle table-dark table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th><input class="form-check-input" type="checkbox" id="selectAll" /></th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Tag</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Premiere</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="listMovie"></tbody>
+                <!-- <tbody id="listMovie">
+                <tr>
+                    <td><input type="checkbox" class="row-checkbox form-check-input" /></td>
+                    <td>Doraemon</td>
+                    <td>IDK</td>
+                    <td><span class="badge text-bg-success">Hài</span></td>
+                    <td>142 phút</td>
+                    <td>22-05-2025</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn text-yellow border-0" data-bs-toggle="dropdown">
+                                <i class="fa-solid fa-circle-chevron-down fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-white" onclick="">Edit</a></li>
+                                <li><a class="dropdown-item text-danger" onclick="">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="row-checkbox form-check-input" /></td>
+                    <td>Spider Man</td>
+                    <td>Peter</td>
+                    <td><span class="badge text-bg-danger">Hành động</span></td>
+                    <td>175 phút</td>
+                    <td>27-05-2025</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn text-yellow border-0" data-bs-toggle="dropdown">
+                                <i class="fa-solid fa-circle-chevron-down fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-white" onclick="">Edit</a></li>
+                                <li><a class="dropdown-item text-danger" onclick="">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>-->
+            </table>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <span>Items per page
+                    <select class="form-select d-inline-block w-auto ms-2" id="coutPerPage">
+                        <option selected>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                    </select>
+                </span>
+                <nav>
+                    <ul class="pagination mb-0" id="ftPagination">
+                        <li class="page-item disabled"><a class="page-link fw-bold">&lt;</a></li>
+                        <li class="page-item active"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link">2</a></li>
+                        <li class="page-item"><a class="page-link">3</a></li>
+                        <li class="page-item"><a class="page-link fw-bold">></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="addMovieModal" tabindex="-1" aria-labelledby="addMovieModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-white" id="addMovieModalLabel">Thêm phim</h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formMovie">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label class="form-label">Title</label>
+                                    <input type="text" class="form-control" name="title" placeholder=" Tiêu đề phim">
+                                    <p class="text-danger" id="Ptitle"></p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Image Upload</label>
+                                    <input type="file" class="form-control" placeholder="URL ảnh" name="image"
+                                        accept="image/*" id="fileInput">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Video URL</label>
+                                    <input type="text" class="form-control" placeholder="URL video" name="video">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Country</label>
+                                    <input type="text" class="form-control" placeholder="Quốc gia" name="country">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Duration (minutes)</label>
+                                    <input type="number" class="form-control" min="1" name="duration"
+                                        placeholder="Thời lượng">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Age Limit</label>
+                                    <select class="form-select" name="age_limit">
+                                        <option value="">Chọn độ tuổi</option>
+                                        <option value="P">P</option>
+                                        <option value="K">K</option>
+                                        <option value="T13">T13</option>
+                                        <option value="T16">T16</option>
+                                        <option value="T18">T18</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Tag</label>
+                                    <input type="text" class="form-control" placeholder="Thể loại" name="tag">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Format</label>
+                                    <select class="form-select" name="format">
+                                        <option value="">Chọn định dạng</option>
+                                        <option value="2D">2D</option>
+                                        <option value="3D">3D</option>
+                                    </select>
+                                </div>
+
+                                <!-- <div class="col-md-4">
+                                <label class="form-label">Room</label>
+                                <input type="number" class="form-control" min="1">
+                            </div> -->
+                                <div class="col-md-6">
+                                    <label class="form-label">Author</label>
+                                    <input type="text" class="form-control" placeholder="Tác giả" name="author">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Actors</label>
+                                    <input type="text" class="form-control" placeholder="Diễn viên" name="actor">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label">Description</label>
+                                    <textarea class="form-control" rows="4" placeholder="Mô tả"
+                                        name="description"></textarea>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Premiere Date</label>
+                                    <input type="date" class="form-control" name="premiere">
+                                </div>
+
+                                <!-- schedute -->
+                                <div class="col-12">
+                                    <label class="form-label">Schedule</label>
+                                    <div id="schedule-container" class="row g-2 mb-2">
+                                        <div class="schedule-item row g-2 align-items-end mb-1">
+                                            <div class="col-md-6">
+                                                <!-- ngày chiếu -->
+                                                <input type="date" class="form-control scheduleDate" id="dateInput">
+                                            </div>
+                                            <div class="schedule-time row col-md-6">
+                                                <div class="row col-12 g-1 time-item">
+                                                    <div class="col-md-4">
+                                                        <input type="time" class="form-control scheduleTime" placeholder="Giờ chiếu" />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="addRoom"></div>
+                                                        <!-- <select name="room" id="" class="form-control room addRoom">
+                                                    <option value="room 1">room 1</option>
+                                                    </select> -->
+                                                        <p class="text-danger"></p>
+                                                    </div>
+                                                    <div class="col-md-2"><span class="btn btn-outline-success"><i
+                                                                class="fa-solid fa-plus"></i></span>
+                                                    </div>
+                                                    <!-- <div class="col-md-1"
+                                                    onclick="this.closest('.schedule-time').remove()">
+                                                    <span class="btn btn-danger">X</span>
+                                                </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- add Schedule button -->
+                                    <button type="button" class="btn btn-outline-success btn-sm"
+                                        onclick="addSchedule()"><i class="fa-solid fa-plus"></i> Add Schedule</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer" id="footerModal">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" id="btnSubmit">Save Movie</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="../../assets/icon/trashcan.png" alt="" class="w-25 d-block mx-auto">
+                        <h5 class="text-center mt-3 text-white">Bạn có chắc chắn muốn xóa phim này?</h5>
+                        <div class="w-auto d-flex gap-3 justify-content-center mt-4">
+                            <button class="btn btn-primary" data-bs-dismiss="modal">Hủy</button>
+                            <button class="btn btn-danger" onclick="onDelete()">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <div id="message">
+    </div>
+</body>
+<!-- <script src="../../js/admin/movie.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../js/admin/movie.js"></script>
+
+</html>

@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border-radius: 8px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: dotted;
+    color: white;
+}
+
+/* ====== bootstrap tay ====== */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify-content-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.justify-content-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.align-content-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.m-2 {
+    margin: 20px;
+}
+
+.m-1 {
+    margin: 16px;
+}
+
+.ml-1 {
+    margin-left: 10px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.text-decorate-underline {
+    text-decoration: none;
+
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+.text-danger {
+    color: rgb(220, 21, 21);
+}
+
+.op-7 {
+    opacity: 0.7;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.fs-2 {
+    font-size: 36px;
+}
+
+.fs-3 {
+    font-size: 30px;
+}
+
+.fs-4 {
+    font-size: 24px;
+}
+
+.fs-5 {
+    font-size: 20px;
+}
+
+.fs-6 {
+    font-size: 16px;
+}
+
+.fs-mini {
+    font-size: 12px;
+}
+
+.p-03 {
+    padding: 3px;
+}
+
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* =================== */
+
+.iconCircle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+
+.main2 {
+    display: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none;
+}
+
+.imgHead img{
+    margin-top: 80px;
+    border-radius: 0px;
+
+}
+
+@media (min-width: 768px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .div-imgHead {
+        margin: 0 !important;
+        width: 100%;
+        height: 830px;
+    }
+    
+    body,
+    html {
+        width: 100%;
+        min-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .imgHead img{
+    margin-top: 80px ;   
+    height: 700px;
+    }
+
+    .imgHead,
+    .imgHead img {
+        width: 100%;
+        /* height: 80%; */
+        object-fit: cover;
+    }
+    .main1{
+        width: 1440px;
+        /* margin-top: 60px; */
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+    .box-main1{
+        width: 1280px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .trai{
+        width: 1000px;
+    }
+    .main1-title1{
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .divicon{
+        width: 203px;
+        display: flex;
+        /* justify-content: space-between; */
+        font-size: 20px;
+        align-items: center;
+    }
+    .divicon .iconCircle{
+        margin-right: 5px;
+    }
+    .main1-Card{
+        margin-top: 20px;
+        width: 1000px;
+        display: flex;
+        /* justify-content: space-between; */
+        flex-wrap: wrap;
+        gap: 28px;
+    }
+    .card{
+        width: 229px;
+        height: 378px;
+        display: flex;
+        flex-direction: column;
+        /* margin-right: 21px; */
+        margin-bottom: 30px;
+    }
+    .card-p{
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        margin-top: 12px;
+    }
+    .name-movi{
+        width: 229px;
+        height: auto;
+        margin-top: 12px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .card img{
+        width: 229px;
+        height: 290px;
+        object-fit: cover;
+    }
+    .phai{
+        width: 256px;
+    }
+    .phai-title{
+        width: 256px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .km{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .phai-img1{
+        width: 256px;
+        margin-top: 16px;
+    }
+    .phai-img1 img{
+        width: 256px;
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+    .div-imgHead {
+        margin: 0 !important;
+        width: 100%;
+        height: 290px;
+        margin-top: 15px !important;
+    }
+    .swiper{
+        margin: 0 !important;
+    }
+    body,
+    html {
+        width: 768px;
+    }
+    .imgHead,
+    .imgHead img {
+        width: 768px;
+        height: 340px;
+        object-fit: cover;
+    }
+    .imgHead img{
+        margin-top: 64px;
+    }
+    .main1 {
+        display: none;
+    }
+
+    .main2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 768px;
+        /* margin-top: 24px; */
+    }
+    
+    .Box1,
+    .Box2,
+    .Box3,
+    .Box4 {
+        width: 720px;
+        margin-top: 20px;
+    }
+    .Box1{
+        margin-top: 60px;}
+    .Box4{
+        margin-top: 20px;
+    }
+    .Box5 img{
+        width: 720px;
+    }
+    .b1-title1{
+        width: 720px ;
+        margin: 0;
+    }
+    .Card2 {
+        width: 280px;
+        height: 420px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .Card2 .ft-name-movie {
+        width: 280px;
+        text-align: center;
+    }
+    .Card2 img {
+        max-width: 280px;
+        max-height: 390px;
+    }
+    .Card3 {
+        width: 224px;
+        height: 212px;
+    }
+
+    .Card3 img {
+        width: 224px;
+        height: 140px;
+    }
+    .content {
+        width: 100%;
+        height: 64px;
+    }
+}
+
+@media (max-width: 390px) {
+
+    html,
+    body {
+        min-width: 390px !important;
+    }
+
+    .main1 {
+        display: none;
+    }
+
+    .imgHead {
+        width: 100%;
+        min-width: 390px !important;
+    }
+
+    .imgHead img{
+        margin-top: 64px;
+    }
+    
+    .main2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 390px;
+        align-items: center;
+    }
+
+    .Box1,
+    .Box2,
+    .Box3,
+    .Box4,
+    .Box5 {
+        width: 358px;
+    }
+    .b1-title1{
+        width: 358px;
+    }
+
+    .Card2 .ft-name-movie {
+        width: 220px;
+        text-align: center;
+    }
+
+    .Card2 img {
+        width: 220px !important;
+        height: 280px !important;
+    }
+
+    .Card2 {
+        width: 220px !important;
+        max-height: 340px;
+    }
+
+    .main2 {
+        font-size: 15px;
+    }
+    .Card3 img, .Card3, .Card3 div{
+        width: 167px;
+    }
+    .Box5 img{
+        width: 358px;
+    }
+}
+
+.s1 {
+    display: block;
+}
+
+.phai-img1 img{
+    max-height: 128px;
+}
