@@ -190,7 +190,6 @@ function openModal(id) {
   newsIndex = id;
   const modal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
   modal.show();
-
 }
 
 
