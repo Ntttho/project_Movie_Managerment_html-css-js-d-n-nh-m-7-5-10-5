@@ -74,7 +74,7 @@
                 </button>
             </div>
 
-            <button id="deleteSelected" class="btn btn-danger btn-sm" onclick="deleteSelected()">Xoá lựa chọn</button>
+            <button id="deleteSelected" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModalAll">Xoá lựa chọn</button>
             <table class="table table-hover align-middle table-dark table-striped mt-5">
                 <thead>
                     <tr>
@@ -151,12 +151,14 @@
 
         </div>
 
-        <div class="modal fade" id="addMovieModal" tabindex="-1" aria-labelledby="addMovieModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addMovieModal" tabindex="-1" aria-labelledby="addMovieModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title text-white" id="addMovieModalLabel">Thêm phim</h5>
-                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="formMovie">
@@ -249,7 +251,8 @@
                                             <div class="schedule-time row col-md-6">
                                                 <div class="row col-12 g-1 time-item">
                                                     <div class="col-md-4">
-                                                        <input type="time" class="form-control scheduleTime" placeholder="Giờ chiếu" />
+                                                        <input type="time" class="form-control scheduleTime"
+                                                            placeholder="Giờ chiếu" />
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="addRoom"></div>
@@ -294,6 +297,20 @@
                         <div class="w-auto d-flex gap-3 justify-content-center mt-4">
                             <button class="btn btn-primary" data-bs-dismiss="modal">Hủy</button>
                             <button class="btn btn-danger" onclick="onDelete()">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmDeleteModalAll" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="../../assets/icon/trashcan.png" alt="" class="w-25 d-block mx-auto">
+                        <h5 class="text-center mt-3 text-white">Bạn có chắc chắn muốn xóa phim này?</h5>
+                        <div class="w-auto d-flex gap-3 justify-content-center mt-4">
+                            <button class="btn btn-primary" data-bs-dismiss="modal">Hủy</button>
+                            <button class="btn btn-danger" class="btn btn-primary" data-bs-dismiss="modal" onclick="deleteSelected()">Xóa</button>
                         </div>
                     </div>
                 </div>

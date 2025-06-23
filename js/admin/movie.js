@@ -27,6 +27,8 @@ function toggleDeleteButton() {
     deleteButton.style.display = check ? "inline-block" : "none";
 }
 
+
+
 function deleteSelected() {
     let id = Array.from(checkBox).filter(item => item.checked).map(item => Number(item.getAttribute("data-id")));
 
@@ -114,7 +116,7 @@ function onPage(id) {
 function onDelete() {
     let el = document.querySelector("#confirmDeleteModal");
     let id = Number(el.getAttribute("data-id"));
-    console.log(id);
+    // console.log(id);
     movies = movies.filter(m => m.id !== id);
     localStorage.setItem("movies", JSON.stringify(movies));
     calcTotalPage();
